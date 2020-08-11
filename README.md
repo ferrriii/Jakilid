@@ -13,10 +13,10 @@ a encrypted password manager
 Backend of this project has been developed using Qt4 which recently was ported to Qt5. The user interface is developed using Vanilla JS combined with various technologies and frameworks. Some of them are in below list.
 - [Qt framework](https://doc.qt.io/qt-5/opensourcelicense.html)
 - [SQLCipher](https://www.zetetic.net/sqlcipher/license/)
-- jQuery UI
+- [jQuery UI](https://jqueryui.com/)
 - Websockets
 - JSONP
-- Pure CSS framework
+- [Pure CSS framework](https://purecss.io/)
 
 For building, you need to create SQLCipher driver for Qt.
 Project creates two executables. `JakilidService` is the service which provides functionalities to ui. `Jakilid` is the main user interface app.
