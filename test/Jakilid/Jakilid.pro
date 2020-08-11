@@ -10,19 +10,19 @@ QT       -= gui
 
 LIBS     += -lapplication -ldataaccess -ldomain
 
-TARGET = tst_hendoonetest
+TARGET = tst_jakilidtest
 CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
 
-SOURCES += tst_hendoonetest.cpp \
-    ../../ui/gui/hendoone.cpp
+SOURCES += tst_jakilidtest.cpp \
+    ../../ui/gui/jakilid.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 
 HEADERS += \
-    ../../ui/gui/hendoone.h
+    ../../ui/gui/jakilid.h
 
 include(../../common.pri)

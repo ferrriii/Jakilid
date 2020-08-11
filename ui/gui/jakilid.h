@@ -1,5 +1,5 @@
-#ifndef HENDOONE_H
-#define HENDOONE_H
+#ifndef JAKILID_H
+#define JAKILID_H
 
 #include <QObject>
 #include <application/sessionaccountservice.h>
@@ -7,12 +7,12 @@
 class Account;
 class Info;
 
-class Hendoone : public QObject
+class Jakilid : public QObject
 {
     Q_OBJECT
 public:
-    Hendoone(QObject *parent = 0);
-    ~Hendoone();
+    Jakilid(QObject *parent = 0);
+    ~Jakilid();
 
     Q_INVOKABLE bool    authenticate(const QString &profile, const QString &password);
     Q_INVOKABLE bool    isUnlocked() const;
@@ -41,4 +41,4 @@ signals:
     
 };
 
-#endif // HENDOONE_H
+#endif // JAKILID_H

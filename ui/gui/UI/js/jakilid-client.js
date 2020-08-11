@@ -101,8 +101,7 @@ function setupJakilidClient(jsPrefix, notInstalled, sid)
 
 	function setupEmbedClient(failureCallBack)
 	{
-		if (typeof Hendoone === 'undefined')
-			return failureCallBack();
+        return failureCallBack();
 		
 		addScript(jsPathPrefix + 'jakilid-embed-client.js', function()
 		{

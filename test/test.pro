@@ -11,7 +11,7 @@ SUBDIRS += \
     AccountRepository \
     ProfileService \
     SessionAccountService \
-    Hendoone \
+    Jakilid \
     DatabaseService \
     WebSocketServer \
     ClientManager \

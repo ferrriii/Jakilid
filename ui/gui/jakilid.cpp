@@ -1,15 +1,15 @@
-#include "hendoone.h"
+#include "jakilid.h"
 #include <domain/account.h>
 #include <application/databaseservice.h>
 #include <QJsonObject>
 #include <QJsonArray>
 
-Hendoone::Hendoone(QObject *parent) :
+Jakilid::Jakilid(QObject *parent) :
     QObject(parent), m_session(0)
 {
 }
 
-Hendoone::~Hendoone()
+Jakilid::~Jakilid()
 {
     if (m_session)
         delete m_session;
@@ -17,14 +17,14 @@ Hendoone::~Hendoone()
 
 
 
-void Hendoone::lock()
+void Jakilid::lock()
 {
     if (m_session)
         m_session->lock();
 }
 
 
-bool Hendoone::authenticate(const QString &profile, const QString &password)
+bool Jakilid::authenticate(const QString &profile, const QString &password)
 {
     //NOTE: we only have one active session so when unlocking new session, the old one
     //will get deleted and replaced. exception: if requested profile is same as old session's
@@ -63,14 +63,14 @@ bool Hendoone::authenticate(const QString &profile, const QString &password)
         return false;   //requested profile does not exist!
 }
 
-bool Hendoone::isUnlocked() const
+bool Jakilid::isUnlocked() const
 {
     if (!m_session)
         return false;
     return m_session->isUnlocked();
 }
 
-QString Hendoone::find(QString what, const QString &label, int count, int offset)
+QString Jakilid::find(QString what, const QString &label, int count, int offset)
 {
     int total = 0;
     QList<Account *> accounts =  m_accountSessionService.find(what, label, count, offset, &total);
@@ -88,7 +88,7 @@ QString Hendoone::find(QString what, const QString &label, int count, int offset
 }
 
 
-QString Hendoone::load(const QString &id)
+QString Jakilid::load(const QString &id)
 {
     Account *acc = m_accountSessionService.load(id);
     if (acc)
@@ -101,13 +101,13 @@ QString Hendoone::load(const QString &id)
         return QString();
 }
 
-bool Hendoone::remove(const QString &id)
+bool Jakilid::remove(const QString &id)
 {
     return m_accountSessionService.remove(id);
 }
 
 
-QString Hendoone::getCurrentProfile()
+QString Jakilid::getCurrentProfile()
 {
     Profile *profile =  m_accountSessionService.profile();
     if (profile && profile->isValid())
@@ -116,13 +116,13 @@ QString Hendoone::getCurrentProfile()
         return QString();
 }
 
-bool Hendoone::setSettings(int timeout, const QString &lang)
+bool Jakilid::setSettings(int timeout, const QString &lang)
 {
     return m_accountSessionService.setProfileSettings(timeout, lang);
 }
 
 
-bool Hendoone::changePass(const QString &oldPass, const QString &newPass)
+bool Jakilid::changePass(const QString &oldPass, const QString &newPass)
 {
     if (!m_session)
         return false;
@@ -132,7 +132,7 @@ bool Hendoone::changePass(const QString &oldPass, const QString &newPass)
 
 
 
-QString Hendoone::save(const QString &account)
+QString Jakilid::save(const QString &account)
 {
     return save( QJsonDocument::fromJson(account.toUtf8()).object() );
 //    if (!isUnlocked())
@@ -148,7 +148,7 @@ QString Hendoone::save(const QString &account)
 //        return QString();
 }
 
-QString Hendoone::save(const QJsonValue &account)
+QString Jakilid::save(const QJsonValue &account)
 {
     if (!isUnlocked())
         return 0;
