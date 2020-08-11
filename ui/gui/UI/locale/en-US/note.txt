@@ -1,0 +1,1 @@
+english (us) is base language which there's no need to have specific locale

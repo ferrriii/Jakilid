@@ -1,0 +1,120 @@
+@font-face {
+	font-family: "byekan";
+	src: url(BYekan.eot?#) format("eot"),
+	url(BYekan.woff)	 format("woff"),
+	url(BYekan.ttf)	format("truetype");
+}
+@font-face {
+	font-family: 'iraniansans';
+	src: url('iransansz-webfont.eot');
+	src: url('iransansz-webkit-fixed.woff') format('woff'), url('iransansz-webkit-fixed.ttf') format('truetype'), url('iransansz-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body{
+	font-family: "iraniansans", "byekan", "tahoma", "Segoe UI", sans-serif;
+	word-spacing: 1px;
+}
+h1,h2,h3,h4,h5,h6 ,legend{
+	font-family: "byekan", "tahoma", "Segoe UI", sans-serif;
+}
+.ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {	/*overwrite jquery ui font*/
+	font-family: "iraniansans", "byekan", "tahoma", "Segoe UI", sans-serif;
+}
+/* account title edit input font */
+.account-head  input {
+	font-family: "byekan", "tahoma", "Segoe UI", sans-serif;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: left;
+}
+.ui-dialog .ui-dialog-title {
+    float: right;
+    margin: 0.1em 20px;
+	text-align:center;
+}
+
+.logo {
+	font-size:1.2em;
+	float:left;
+}
+.clip-controls {
+	right: 5px;
+	top:2px;
+}
+
+.fright {
+	float:left;
+}
+.fleft {
+	float:right;
+}
+#dismiss{
+right: auto;
+left: 35px;
+font-family: "iraniansans", "byekan", "tahoma", "Segoe UI", sans-serif;
+}
+#query {
+	padding-right: 0.6em;
+	padding-left: 26px;
+}
+#searchControls {
+	top:8px;
+	right:auto;
+	left:10px;
+}
+#addAcount:hover {
+	text-shadow: -4px 4px 3px rgb(200, 200, 200);
+	-moz-text-shadow: -4px 4px 3px rgb(200, 200, 200);
+	-webkit-text-shadow: -4px 4px 3px rgb(200, 200, 200);
+}
+
+
+#logo{
+	float: right;
+}
+#aboutDesc {
+	margin-left: auto;
+	margin-right: 140px;
+}
+#website {
+	float: right;
+}
+#feedback {
+	float: left;
+}
+
+.list > li > .accListItem > img {
+	margin-left: 15px;
+	margin-right: auto;
+}
+.list > li > .accListItem > h3 {
+	font-size:1.2em;
+}
+
+.account-head > h2, .account-head > div {
+    margin-right: 95px;
+    margin-left: auto;
+}
+.account-head > img {
+    margin-left: 10px;
+	margin-right: auto;
+}
+.rollOver {
+	left:0;
+	right: auto;
+}
+#account-info > tbody > tr > td{
+	height:21px;
+}
+
+.msgIcon {
+float: right;
+margin-left:10px;
+margin-right:auto;
+}
+
+/* overwrite select2 */
+.select2-container .select2-search--inline {
+	float: right;
+}

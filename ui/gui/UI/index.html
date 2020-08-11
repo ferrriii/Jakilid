@@ -1,0 +1,173 @@
+<!doctype html>
+<!-- Copyright Jakilid.com - All Rights Reserved -->
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Jakilid Password Manager</title>
+	<link href="css/glyph.css" rel="stylesheet" />
+	<link href="css/jqueryui/jquery-ui.min.css" rel="stylesheet" />
+	<link href="css/select2.min.css" rel="stylesheet" />
+	<link href="css/ui.css" rel="stylesheet" />	<!-- NOTE: ui should be after jquery ui css because it overwrites some of its css rules -->
+	<link href="css/pure-min.css" rel="stylesheet" />	<!-- component used: base,forms,table,buttons -->
+	<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+	<link href="css/jqueryui-editable.css" rel="stylesheet" type="text/css" /> <!-- TODO: replace it with self made solution -->
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>	<!-- NOTE: dialog changed to display modal dialog over previous modal ones -->
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/popup.js"></script>
+	<script src="js/RainbowVis.js"></script>
+	<script src="js/PasswdStrength.js"></script>
+	<script src="js/inlineedit.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/qwebchannel.js"></script>
+	<script src="js/jakilid-client.js"></script>
+	<script src="js/i18n.js"></script>
+	<script src="js/accountView.js"></script>
+	<script src="js/ui.js"></script>
+	<script src="js/select2.min.js"></script>	
+</head>
+
+<body>
+	<div id="title-bar">
+		<div class="title">
+			<div id="jakilid" class="logo">Jakilid</div>
+			<div class="clip-controls">
+			<span id="lockBtn" title="Lock" aria-hidden="true" class="icon-lock clip-btn hidden"></span>
+			<!-- <span title="About" aria-hidden="true" class="icon-info clip-btn"></span> -->
+			<span id="configBtn" title="Configurations" aria-hidden="true" class="icon-config clip-btn hidden"></span>
+			<span id="aboutBtn" title="About Jakilid" aria-hidden="true" class="icon-info clip-btn"></span>
+			<span id="minimizeBtn" title="Minimize" aria-hidden="true" class="icon-minimize clip-btn"></span>
+			<span id="maximizeBtn" title="Maximize" aria-hidden="true" class="icon-expand clip-btn"></span>
+			<span id="quitBtn" title="Quit" aria-hidden="true" class="icon-power clip-btn clip-quit"></span>
+			</div>
+		</div>
+	</div>
+
+	<div id="windowContainer">
+		<div id="topBar">
+		<div id="messageBox"><span id="msg"></span><button id="dismiss" class="pure-button pure-button-primary">dismiss</button></div>
+		<div class="Toolbar">
+			<form class="pure-form fleft" id="searchForm">
+				<input id="query" type="search" class="ui-widget pure-input" placeholder="Search..." accesskey="f" maxlength="256">
+				<span id="searchControls">
+					<span id="searchBtn" title="Search" aria-hidden="true" class="icon-search searchControl"></span>
+					<span id="cancelSearchBtn" title="Clear results" aria-hidden="true" class="icon-cancel searchControl hidden"></span>
+				</span>
+			</form>
+			<span class="icon-plus fright" id="addAcount" title="Add new item"></span>
+			
+		</div>
+
+		<div id="tabs">
+			<div class="tab active" data-label="">All</div>
+			
+			<div id="tabBorder"></div>
+		</div>
+		</div>
+		<div class="MainWindow">
+			<div>
+				<div class="ResultStat">There's no account to display, try adding a new account.</div>
+				<div class="MainContainer">
+					<ul class="list" id="accountList">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ********* windows ********* -->
+
+	<div class="hidden" id="login" title="Unlock Jakilid">
+		<div id="dialog-form">
+			<form id="login-form" class="pure-form">
+				<fieldset>
+					<label id="lblPass" for="password">Password</label>
+					<input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all" maxlength="256" />
+					<div id="loginIndicator" class="spinner hidden">
+						<div class="bounce1"></div>
+						<div class="bounce2"></div>
+						<div class="bounce3"></div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	
+	<div id="about">
+		<div>
+			<span id="logo" class="icon-jakilid"></span>
+			<div id="aboutDesc">
+				<h1 id="aboutH1">Jakilid</h1>
+				<div id="aboutVer">Version 1.1</div>
+				<div id="aboutBuild">Build Date: 2015/06/04</div>
+			</div>
+		</div>
+		<div id="aboutFooter">
+			<span id="website"><a id="websiteStr" href="http://www.jakilid.com" target="_blank">jakilid.com</a></span>
+			<span id="lic"><a id="licStr" href="http://www.jakilid.com/license-info" target="_blank">license</a></span>
+			<span id="feedback"><a id="feedbackStr" href="http://www.jakilid.com/feedback" target="_blank">feedback</a></span>
+			<div id="copyright">Copyright © 2014 by jakilid.com all rights reserved.</div>
+		</div>	
+	</div>
+
+	<!-- hidden class is for preventing flash at startup -->
+	<div class="hidden" id="account" title="Account Details">
+		<div class ="account-head">
+			<img src="img/user-medium.png" class="fleft" alt="Data Details">
+			<h2 id="account-title" data-required="1" data-type="text" data-title="Enter title" data-maxWidth="320">Account title</h2>
+			<div><span id="lblLabels">Labels:</span> <span id="labels">Social, Work</span></div>
+			<div><span id="lblCreated">Created:</span> <span id="created" data-type="date" data-title="Select date" data-maxWidth="330">2014/10/10</span></div>
+			<!-- <p id="account-description" data-type="textarea" data-title="Enter account description:">description goes here</p> -->
+		</div>
+		<table id="account-info" class="pure-table ui-widget" dir="auto">
+			<tbody>
+			</tbody>
+		</table>	
+	</div>
+
+	<div id="configwindow" title="Configurations" class="hidden">
+		<form id="configform" class="pure-form pure-form-stacked">
+			<fieldset>
+				<legend id="lblGeneral">General</legend>
+
+				<label id="lblTimeout" for="timeout">How many minutes stay inactive before locking up?</label>
+				<input id="timeout" type="number" min="1" max="999" step="any">
+				
+				<label id="lblLang" for="configLang">Choose your language:</label>
+				<select id="configLang">
+					<option value="en-US" dir="auto">English</option>
+					<option value="fa-IR" dir="auto">فارسی</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend id="lblDatabase">Database</legend>
+
+				<label id="dbAddress" for="changeMasterPass">Database: address</label>
+				<button id="changeMasterPass" class="pure-button pure-button-primary" type="button">Change master password</button>
+			</fieldset>
+		</form>
+	</div>
+	
+	<div id="changePassWin" title="Change Master Password" class="hidden">
+		<form class="pure-form pure-form-stacked">
+			<fieldset>
+			<legend id="lblChangePass">Change Master Password</legend>
+			
+			<label id="lblCurPass" for="curPassword">Current Password</label>
+			<input id="curPassword" type="password" placeholder="Type current password">
+			
+			<label id="lblNewPass" for="newPassword">New Password</label>
+			<input id="newPassword" type="password" placeholder="Type New Password">
+			
+			<label id="lblNewPass2" for="newPassword2">Confirm New Password</label>
+			<input id="newPassword2" type="password" placeholder="Type New Password Again">
+			
+			</fieldset>
+		</form>
+		<div id="errorMessage" class="invisible">
+			<span class="icon-notification" style="color:red"></span> <span id="errorSpan"></span>
+		</div>	
+	</div>
+	
+</body>
+</html>
