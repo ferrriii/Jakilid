@@ -35,9 +35,7 @@ win32:RC_FILE = details.rc
 include(../../common.pri)
 
 win32 {
-    WINSDK_DIR = C:/Program Files (x86)/Microsoft SDKs/Windows/v7.0A
     WIN_PWD = $$replace(PWD, /, \\)
-    OUT_PWD_WIN = $$replace(OUT_PWD, /, \\)
-#    QMAKE_POST_LINK = "$$WINSDK_DIR/bin/x64/mt.exe -manifest $$quote($$WIN_PWD\\$$basename(TARGET).manifest.xml) -outputresource:$$quote($$OUT_PWD_WIN\\${DESTDIR_TARGET};1)"
-#    QMAKE_POST_LINK = "$$PWD/../../tool/mt.exe -manifest $$quote($$WIN_PWD\\$$basename(TARGET).manifest.xml) -outputresource:$$quote($$OUT_PWD_WIN\\${DESTDIR_TARGET};1)"
+    OUT_PWD_WIN = $$replace(DESTDIR, /, \\)
+    QMAKE_POST_LINK = "$$PWD/../../tool/mt.exe -manifest $$quote($$WIN_PWD\\$$basename(TARGET).manifest.xml) -outputresource:$$quote($$OUT_PWD_WIN\\$$TARGET).exe"
 }
