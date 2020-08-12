@@ -24,3 +24,5 @@ Project creates two executables. `JakilidService` is the service which provides 
 
 ## TODO
 - Port translator to Qt5
+- Port UI to modern JS frameworks
+- Import/Export
