@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 i18n.lang = {
 	"langCode": "fa-IR",
 	"langName": "فارسی - ایران",
@@ -13,10 +12,10 @@ i18n.lang = {
 	"context": {
 		"Jakilid Password Manager": "مدیریت کلمات عبور جاکلید",
 		"Jakilid": "جاکلید",
-		"jakilid.com": "سایت جاکلید",
+		"website": "وب سایت",
 		"licensing information": "مجوزهای استفاده",
 		"feedback": "ارسال نظر",
-		"Copyright © 2014 by jakilid.com all rights reserved.": "تمام حقوق این برنامه متعلق به jakilid.com است.",
+		"made with ❤": "ساخته شده با ❤",
 		"Build Date: %1": "تاریخ ساخت: %1",
 		"Version %1": "نسخه %1",
 		"About Jakilid Password Manager": "درباره مدیریت کلمات عبور جاکلید",
@@ -79,7 +78,7 @@ i18n.lang = {
 		"Data have been changed": "اطلاعات تغییر کرده است",
 		"Are you sure you want to discard changes?": "آیا مطمئن هستید می خواهید تغییرات را دور بریزید؟",
 		"Jakilid is not running": "جاکلید در حال اجرا نیست",
-		"Please install and run Jakilid.\nVisit http://Jakilid.com for downloading Jakilid Password Manager.": "لطفا جاکلید را نصب و اجرا کنید.\nبرای دانلود مدیریت کلمات عبور جاکلید به http://Jakilid.com مراجعه نمایید.",
+		"Please install and run Jakilid.\nVisit https://github.com/ferrriii/Jakilid for downloading Jakilid Password Manager.": "لطفا جاکلید را نصب و اجرا کنید.\nبرای دانلود مدیریت کلمات عبور جاکلید به https://github.com/ferrriii/Jakilid مراجعه نمایید.",
 		"config": {
 			"How many minutes stay inactive before locking up?": "برنامه بعد از چند دقیقه به صورت خودکار قفل شود؟",
 			"Change Master Password": "تغییر کلمه‌ی عبور اصلی",

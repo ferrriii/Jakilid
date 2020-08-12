@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 //TODO: wrap these contents into an object
 var	KEYTYPE_TEXT		= 0;
 var	KEYTYPE_PASSWORD	= 1;

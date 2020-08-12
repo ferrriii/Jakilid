@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 var JakilidWrapper = {isReady: function(){return false;}, prepared: 0};
 let JakilidUiWaiter= Promise.resolve()
 const isBrowser = () => {

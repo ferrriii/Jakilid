@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 //using Module Pattern
 var formFill = function(){
 

@@ -23,7 +23,7 @@ BEGIN
 			VALUE   "FileDescription",  "Jakilid Password Manager GUI\0"
 			VALUE   "FileVersion",      "1.1\0"
 			VALUE   "InternalName",     "Jakilid\0"
-			VALUE   "LegalCopyright",   "Copyright 2014 by Jakilid.com\0"
+			VALUE   "LegalCopyright",   "GPL-3.0 License \0"
 			VALUE   "OriginalFilename", "Jakilid.exe\0"
 			VALUE   "ProductName",      "Jakilid\0"
 			VALUE   "ProductVersion",   "1.1\0"

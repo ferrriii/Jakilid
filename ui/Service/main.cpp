@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 //    QCoreApplication::arguments()
 
     QCoreApplication::setOrganizationName(QStringLiteral("Jakilid"));
-    QCoreApplication::setOrganizationDomain(QStringLiteral("Jakilid.com"));
+    QCoreApplication::setOrganizationDomain(QStringLiteral("github.com/ferrriii/Jakilid"));
     QCoreApplication::setApplicationName(QStringLiteral("Jakilid Password Manager"));
 
     QSharedMemory mem(QStringLiteral("jakilid-shared-key"));

@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 var locale;
 (async function(){
 	var selectedLabel = '';
@@ -111,10 +110,10 @@ var locale;
 		createScrolls();
 		
 		$('#aboutH1').tr('Jakilid');
-		$('#websiteStr').tr('jakilid.com');
+		$('#websiteStr').tr('website');
 		$('#licStr').tr('licensing information');
 		$('#feedbackStr').tr('feedback');
-		$('#copyright').tr('Copyright © 2014 by jakilid.com all rights reserved.');
+		$('#copyright').tr('made with ❤');
 
 	}
 
@@ -390,7 +389,7 @@ var locale;
 	function onError()
 	{
 		freez();	//hide all windows, disable functionalities
-		message({msg:tr('Please install and run Jakilid.\nVisit http://Jakilid.com for downloading Jakilid Password Manager.'),title:tr('Jakilid is not running'), buttons:{},icon:'alert'});
+		message({msg:tr('Please install and run Jakilid.\nVisit https://github.com/ferrriii/Jakilid for downloading Jakilid Password Manager.'),title:tr('Jakilid is not running'), buttons:{},icon:'alert'});
 	}
 
 	function freez(isUnlocked)
@@ -520,7 +519,7 @@ function upgradeResults(nret)
 				buttons[tr('Visit Jakilid download page')] = function() { 
 				     form = document.createElement("form");
 				     form.method = "GET";
-				     form.action = "http://www.jakilid.com/downloads?r=upgradeFailed";
+				     form.action = "https://github.com/ferrriii/Jakilid";
 				     form.target = "_blank";
 				     document.body.appendChild(form);
 				     form.submit();
@@ -546,7 +545,7 @@ function upgradeResults(nret)
 				buttons[tr('Visit Jakilid download page')] = function() { 
 				     form = document.createElement("form");
 				     form.method = "GET";
-				     form.action = "http://www.jakilid.com/downloads?r=higherDbVer";
+				     form.action = "https://github.com/ferrriii/Jakilid";
 				     form.target = "_blank";
 				     document.body.appendChild(form);
 				     form.submit();

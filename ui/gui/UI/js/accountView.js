@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 function AccountViewer()
 {
 

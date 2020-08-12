@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 var wizard = function(){
 
 	var startUi = null;

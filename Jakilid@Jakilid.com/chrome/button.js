@@ -1,4 +1,4 @@
-/* Copyright Jakilid.com - All Rights Reserved */
+
 var jakilidAddonUi = function(){
 
 	var matchingAccounts = [];	//holds auto fill suggested accounts

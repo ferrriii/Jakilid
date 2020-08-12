@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 function JakilidWebSocketClient(sid)
 {
 //	if (!('WebSocket' in window))

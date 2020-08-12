@@ -1,4 +1,3 @@
-/* Copyright Jakilid.com - All Rights Reserved */
 Jakilid.prototype = Hendoone;	//inherit
 Jakilid.prototype.constructor = Jakilid;	//override constructor to connect signals
 var JakilidWrapper = new Jakilid();
